@@ -254,7 +254,7 @@
   gap: clamp(1vw, 2vw, 3vw);
 }
 
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .unique__container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;

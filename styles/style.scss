@@ -211,7 +211,7 @@ $yellow: rgb(233, 199, 47);
   &__container {
     margin-left: clamp(1vw, 8vw, 10vw);
     margin-right: clamp(1vw, 8vw, 10vw);
-    @media (max-width: 750px) {
+    @media (max-width: 850px) {
       & {
         justify-content: center;
         align-items: center;
