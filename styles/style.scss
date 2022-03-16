@@ -13,6 +13,10 @@
   color: white;
 }
 
+$lime: #20aa73;
+$blue: rgb(35, 166, 226);
+$yellow: rgb(233, 199, 47);
+
 .button {
   display: inline-block !important;
   text-align: center;
@@ -95,6 +99,43 @@
       }
     }
   }
+  &__hamburger {
+    display: none;
+  }
+
+  @media (max-width: 750px) {
+    & {
+      padding-left: 0px;
+      position: static;
+    }
+    &__list {
+      display: none;
+    }
+    &__hamburger {
+      background-color: grey;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: 5%;
+      width: 60px;
+      border-radius: 10%;
+    }
+  }
+  @media (max-width: 450px) {
+    & {
+      height: 100px;
+      flex-direction: column;
+      gap: 20px;
+    }
+    &__hamburger {
+      margin: 0 0 0 0;
+      width: 90vw;
+      border-radius: 5%;
+    }
+  }
 }
 
 /* 
@@ -120,7 +161,7 @@
   flex-direction: column;
 
   &__heading {
-    font-size: 55px;
+    font-size: clamp(2rem, 5vw, 60px);
     font-family: "Montserrat", sans-serif;
     text-align: center;
     text-transform: uppercase;
@@ -154,26 +195,66 @@
 
 .unique {
   text-align: center;
+  padding-bottom: 10vh;
   &__heading {
     font-family: "Montserrat", Helvetica, sans-serif;
     font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 0px;
+    font-size: clamp(1.5rem, 4vw, 3rem);
   }
   &__paragraph {
     font-family: "Montserrat", Helvetica, sans-serif;
     margin-top: 0px;
+    padding-bottom: 3rem;
+    width: 100%;
   }
+
   &__container {
+    margin-left: clamp(1vw, 8vw, 10vw);
+    margin-right: clamp(1vw, 8vw, 10vw);
+    @media (max-width: 750px) {
+      & {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+
     justify-content: space-evenly;
     display: flex;
+    gap: clamp(1vw, 2vw, 3vw);
     &__item {
-      width: 20%;
+      position: relative;
+
+      &__heading {
+        margin-bottom: 30px;
+        &::before {
+          position: absolute;
+          content: "";
+          z-index: 1;
+          height: 2px;
+          width: 35%;
+          bottom: 35%;
+          left: 30%;
+        }
+        &--red::before {
+          background-color: red;
+        }
+        &--lime::before {
+          background-color: $lime;
+        }
+        &--blue::before {
+          background-color: $blue;
+        }
+        &--yellow::before {
+          background-color: $yellow;
+        }
+      }
+
       &__ring {
         display: block;
         margin-bottom: 30px;
-        width: 145px;
-        height: 145px;
+        width: 135px;
+        height: 135px;
         margin: auto;
         border-radius: 50%;
         border: 10px solid #ececec;
@@ -185,13 +266,13 @@
           border-color: red;
         }
         &--lime:hover {
-          border-color: #20aa73;
+          border-color: $lime;
         }
         &--blue:hover {
-          border-color: rgb(35, 166, 226);
+          border-color: $blue;
         }
         &--yellow:hover {
-          border-color: rgb(233, 199, 47);
+          border-color: $yellow;
         }
       }
       &__icon {
@@ -254,3 +335,34 @@
     }
   }
 }
+
+/* 
+===================
+    PARALAX:END
+===================
+*/
+
+/* 
+===================
+    FOOTER:START
+===================
+*/
+
+.footer {
+  background-color: #272727;
+  height: 200px;
+  &__container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 150px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+/* 
+===================
+    FOOTER:END
+===================
+*/
