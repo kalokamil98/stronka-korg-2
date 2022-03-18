@@ -4,6 +4,11 @@
 ===================
 */
 
+body {
+  margin: 0;
+  word-wrap: break-word;
+}
+
 ::selection {
   background: #e76e6e; /* WebKit/Blink Browsers */
   color: white;
@@ -53,87 +58,107 @@ $yellow: rgb(233, 199, 47);
 */
 
 .nav {
-  background-color: white;
+  @media (max-width: 450px) {
+    & {
+      position: static;
+      height: auto;
+    }
+  }
+  height: 80px;
+  width: 100%;
   z-index: 4;
   position: fixed;
   top: 0px;
-  height: 80px;
-  width: 100%;
-  padding-left: 20%;
-  display: flex;
-  align-items: center;
+  background-color: white;
 
-  &__img {
-    height: 32px;
-    width: 109px;
-  }
-  &__list {
-    margin-left: 30%;
+  &__container {
+    font-family: "Lato", sans-serif;
+    height: 80px;
+    width: 80%;
+    margin: 0 auto 0 auto;
     display: flex;
-    gap: 25px;
-    &__item {
-      &--card::before {
-        content: "";
-        background: url(../images/Shopping-cart.svg);
-        display: inline-block;
-        height: 15px;
-        width: 15px;
-      }
-      &--arrow::after {
-        content: "";
-        background-image: url(../images/Caret_down.svg);
+    align-items: center;
+    justify-content: center;
+    &__img {
+      height: 32px;
+      width: 109px;
+    }
+    &__list {
+      margin-left: auto;
+      display: flex;
+      gap: 25px;
+      &__item {
+        &--card {
+          display: inline-block;
+          min-width: 68px;
+        }
+        &--arrow {
+          display: inline-block;
+          min-width: 68px;
+        }
+        &--card::before {
+          content: "";
+          background: url(../images/Shopping-cart.svg);
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+        }
+        &--arrow::after {
+          content: "";
+          background-image: url(../images/Caret_down.svg);
 
-        display: inline-block;
-        height: 15px;
-        width: 15px;
-      }
+          display: inline-block;
+          height: 15px;
+          width: 15px;
+        }
 
-      font-family: inherit;
-      list-style-type: none;
-      &__link {
-        text-decoration: none;
-        color: black;
-        &:hover {
-          color: red;
+        font-family: inherit;
+        list-style-type: none;
+        &__link {
+          text-decoration: none;
+          color: black;
+          &:hover {
+            color: red;
+          }
         }
       }
     }
-  }
-  &__hamburger {
-    display: none;
-  }
-
-  @media (max-width: 750px) {
-    & {
-      padding-left: 0px;
-      position: static;
-    }
-    &__list {
+    &__hamburger {
       display: none;
     }
-    &__hamburger {
-      background-color: grey;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid black;
-      margin-left: auto;
-      margin-right: 5%;
-      width: 60px;
-      border-radius: 10%;
+
+    @media (max-width: 775px) {
+      & {
+        padding-left: 0px;
+        position: static;
+      }
+      &__list {
+        display: none;
+      }
+      &__hamburger {
+        background-color: grey;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        margin-left: auto;
+        margin-right: 5%;
+        width: 60px;
+        border-radius: 10%;
+      }
     }
-  }
-  @media (max-width: 450px) {
-    & {
-      height: 100px;
-      flex-direction: column;
-      gap: 20px;
-    }
-    &__hamburger {
-      margin: 0 0 0 0;
-      width: 90vw;
-      border-radius: 5%;
+    @media (max-width: 450px) {
+      & {
+        height: 100px;
+        flex-direction: column;
+        gap: 20px;
+      }
+      &__hamburger {
+        margin: 0 0 0 0;
+        width: 90vw;
+        border-radius: 5%;
+      }
     }
   }
 }
@@ -151,7 +176,7 @@ $yellow: rgb(233, 199, 47);
 */
 .header {
   position: relative;
-  height: 500px;
+  height: 800px;
   background: url(../images/bacground_1.jpg) no-repeat center;
   background-size: cover;
   background-attachment: fixed;
@@ -170,11 +195,18 @@ $yellow: rgb(233, 199, 47);
   }
   &__buttons {
     z-index: 2;
+    @media (max-width: 450px) {
+      & {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
+
   &::before {
     position: absolute;
     width: 100%;
-    height: 500px;
+    height: 800px;
     z-index: 1;
     content: " ";
     background-color: rgba($color: #000000, $alpha: 0.5);
@@ -194,23 +226,29 @@ $yellow: rgb(233, 199, 47);
 */
 
 .unique {
+  font-size: 14px;
+  font-family: lato;
   text-align: center;
   padding-bottom: 10vh;
   &__heading {
     font-family: "Montserrat", Helvetica, sans-serif;
-    font-weight: 700;
     font-size: clamp(1.5rem, 4vw, 3rem);
+    margin: 9vh 0 20px 0;
+    text-transform: uppercase;
+    line-height: 40px;
+    font-size: 2.3rem;
   }
   &__paragraph {
-    font-family: "Montserrat", Helvetica, sans-serif;
+    font-size: 1rem;
+    font-family: lato;
     margin-top: 0px;
     padding-bottom: 3rem;
     width: 100%;
   }
 
   &__container {
-    margin-left: clamp(1vw, 8vw, 10vw);
-    margin-right: clamp(1vw, 8vw, 10vw);
+    margin-left: clamp(1vw, 20vw, 30vw);
+    margin-right: clamp(1vw, 20vw, 30vw);
     @media (max-width: 850px) {
       & {
         justify-content: center;
@@ -227,14 +265,17 @@ $yellow: rgb(233, 199, 47);
 
       &__heading {
         margin-bottom: 30px;
+        font-size: 17px;
         &::before {
           position: absolute;
-          content: "";
+          margin: auto;
           z-index: 1;
+          content: "";
+          width: 75%;
           height: 2px;
-          width: 35%;
-          bottom: 35%;
-          left: 30%;
+
+          bottom: -9px;
+          left: 12.5%;
         }
         &--red::before {
           background-color: red;
@@ -321,6 +362,20 @@ $yellow: rgb(233, 199, 47);
     background: url(../images/bacground_1.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
+    @media (max-width: 775px) {
+      & {
+        flex-direction: column;
+        gap: 40px;
+        height: 350px;
+      }
+      &::before {
+        height: 350px !important;
+      }
+      &__heading {
+        text-align: center;
+      }
+    }
+
     &::before {
       position: absolute;
       width: 100%;
@@ -330,8 +385,12 @@ $yellow: rgb(233, 199, 47);
       background-color: rgba(233, 102, 86, 0.4);
     }
     &__heading {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      line-height: 40px;
       color: white;
       z-index: 2;
+      font-size: clamp(1rem, 3vh, 3rem);
     }
   }
 }
@@ -352,12 +411,19 @@ $yellow: rgb(233, 199, 47);
   background-color: #272727;
   height: 200px;
   &__container {
+    padding-top: 70px;
     align-items: center;
     justify-content: center;
     display: flex;
     gap: 150px;
     margin-left: 20%;
     margin-right: 20%;
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 }
 
