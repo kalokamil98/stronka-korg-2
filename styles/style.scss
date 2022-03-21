@@ -65,7 +65,7 @@ $yellow: rgb(233, 199, 47);
     }
   }
   height: 80px;
-  width: 100%;
+  width: 100vw;
   z-index: 4;
   position: fixed;
   top: 0px;
@@ -175,6 +175,7 @@ $yellow: rgb(233, 199, 47);
 ===================
 */
 .header {
+  width: 100vw;
   position: relative;
   height: 800px;
   background: url(../images/bacground_1.jpg) no-repeat center;
@@ -358,7 +359,7 @@ $yellow: rgb(233, 199, 47);
     gap: 100px;
     display: flex;
     height: 250px;
-    width: 100%;
+    width: 100vw;
     background: url(../images/bacground_1.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
@@ -378,7 +379,7 @@ $yellow: rgb(233, 199, 47);
 
     &::before {
       position: absolute;
-      width: 100%;
+      width: 100vw;
       height: 250px;
       z-index: 1;
       content: " ";
@@ -412,6 +413,8 @@ $yellow: rgb(233, 199, 47);
   background-color: #272727;
   height: 200px;
   font-family: lato;
+  width: 100vw;
+
   &__container {
     align-items: center;
     justify-content: center;
@@ -420,6 +423,8 @@ $yellow: rgb(233, 199, 47);
     margin-left: 20%;
     margin-right: 20%;
     @media (max-width: 850px) {
+      gap: 10px;
+      height: 375px;
       flex-direction: column;
       background-color: #272727;
       margin: 0 0 0 0;
@@ -434,6 +439,7 @@ $yellow: rgb(233, 199, 47);
         background-color: #000000;
         @media (max-width: 850px) {
           width: 100vw;
+          padding: 25px 0 25px 0;
         }
       }
 
