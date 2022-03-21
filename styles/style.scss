@@ -265,11 +265,10 @@ $yellow: rgb(233, 199, 47);
     display: flex;
     gap: clamp(1vw, 2vw, 3vw);
     &__item {
-      position: relative;
-
       &__heading {
         margin-bottom: 30px;
         font-size: 17px;
+        position: relative;
         &::before {
           position: absolute;
           margin: auto;
@@ -277,8 +276,8 @@ $yellow: rgb(233, 199, 47);
           content: "";
           width: 75%;
           height: 2px;
-
-          bottom: -9px;
+          top: 0px;
+          bottom: -50px;
           left: 12.5%;
         }
         &--red::before {

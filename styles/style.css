@@ -325,13 +325,10 @@ body {
   }
 }
 
-.unique__container__item {
-  position: relative;
-}
-
 .unique__container__item__heading {
   margin-bottom: 30px;
   font-size: 17px;
+  position: relative;
 }
 
 .unique__container__item__heading::before {
@@ -341,7 +338,8 @@ body {
   content: "";
   width: 75%;
   height: 2px;
-  bottom: -9px;
+  top: 0px;
+  bottom: -50px;
   left: 12.5%;
 }
 
