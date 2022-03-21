@@ -28,6 +28,8 @@ body {
 }
 
 .button {
+  font-size: 14px;
+  font-family: lato;
   display: inline-block !important;
   text-align: center;
   text-transform: uppercase;
@@ -36,9 +38,6 @@ body {
   margin: 10px;
   border: none;
   z-index: 3;
-}
-
-.button > a {
   text-decoration: none;
   color: white;
 }
@@ -470,11 +469,11 @@ body {
 
 .paralax__container__heading {
   font-family: "Lato", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 40px;
   color: white;
   z-index: 2;
-  font-size: clamp(1rem, 3vh, 3rem);
+  font-size: clamp(1rem, 2.5vh, 3rem);
 }
 
 /* 

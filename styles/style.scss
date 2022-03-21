@@ -24,6 +24,8 @@ $blue: rgb(35, 166, 226);
 $yellow: rgb(233, 199, 47);
 
 .button {
+  font-size: 14px;
+  font-family: lato;
   display: inline-block !important;
   text-align: center;
   text-transform: uppercase;
@@ -32,11 +34,8 @@ $yellow: rgb(233, 199, 47);
   margin: 10px;
   border: none;
   z-index: 3;
-
-  > a {
-    text-decoration: none;
-    color: white;
-  }
+  text-decoration: none;
+  color: white;
 
   &--green {
     background-color: #20aa73;
@@ -389,11 +388,11 @@ $yellow: rgb(233, 199, 47);
     }
     &__heading {
       font-family: "Lato", sans-serif;
-      font-weight: 300;
+      font-weight: 500;
       line-height: 40px;
       color: white;
       z-index: 2;
-      font-size: clamp(1rem, 3vh, 3rem);
+      font-size: clamp(1rem, 2.5vh, 3rem);
     }
   }
 }
